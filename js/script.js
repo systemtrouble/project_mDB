@@ -24,3 +24,9 @@ const movieDB = {
     ]
 };
 
+const adCont = document.querySelectorAll('.promo__adv img');
+
+
+adCont.forEach(elem => {
+    elem.remove();
+})
