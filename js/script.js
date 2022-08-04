@@ -16,10 +16,10 @@
 
 const movieDB = {
     movies: [
-        "Логан",
+        "Армагедон",
         "Лига справедливости",
         "Ла-ла лэнд",
-        "Одержимость",
+        "Ёлки - палки",
         "Скотт Пилигрим против..."
     ]
 };
@@ -35,3 +35,11 @@ genre.textContent = "ДРАМА";
 
 document.querySelector('.promo__bg').style.backgroundImage = `url(./img/bg.jpg)`;
 
+const collator = new Intl.Collator('ru-RU');
+movieDB.movies.sort(collator.compare);
+const filmList = document.querySelector('.promo__interactive-list');
+filmList.innerHTML = '';
+for (let key in movieDB.movies) {
+    filmList.innerHTML += `<li class="promo__interactive-item">${+key + 1}   ${movieDB.movies[key]}
+    <div class="delete"></div></li>`;
+}
