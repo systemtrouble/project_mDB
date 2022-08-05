@@ -33,7 +33,7 @@ adCont.forEach(elem => {
 const genre = document.querySelector('.promo__genre');
 genre.textContent = "ДРАМА";
 
-document.querySelector('.promo__bg').style.backgroundImage = `url(./img/bg.jpg)`;
+document.querySelector('.promo__bg').style.backgroundImage = `url(./img/bg.jpg)`;  // Change background image
 
 const collator = new Intl.Collator('ru-RU');
 movieDB.movies.sort(collator.compare);
